@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema({
   wins: { type: Number, default: 0 },
   losses: { type: Number, default: 0 },
   winStreak: { type: Number, default: 0 },
-  rank: { type: Number, default: 0 },
+  rank: { type: Number, default: 18 },
   rankpoint: { type: Number, default: 0 }
 });
 
