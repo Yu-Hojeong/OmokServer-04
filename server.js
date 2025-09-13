@@ -42,7 +42,9 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   wins: { type: Number, default: 0 },
   losses: { type: Number, default: 0 },
-  winStreak: { type: Number, default: 0 }
+  winStreak: { type: Number, default: 0 },
+  rank: { type: Number, default: 0 },
+  rankpoint: { type: Number, default: 0 }
 });
 
 
