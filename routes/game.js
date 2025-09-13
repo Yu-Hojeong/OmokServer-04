@@ -4,7 +4,7 @@ const User = require('../models/user');
 const router = express.Router();
 
 
-router.post('/api/record', async (req, res) => {
+router.post('/record', async (req, res) => {
 
     try {
         const { userId, result } = req.body;

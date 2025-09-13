@@ -14,7 +14,6 @@ const app = express();
 const port = 3000;
 
 
-
 app.use(bodyParser.json());
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -27,7 +26,6 @@ app.use(session({
 }));
 
 
-
 mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log('몽고DB 연결 성공!');
 }).catch((err) => {
@@ -36,6 +34,7 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 
 
 app.use('/auth', authRoutes);
+
 app.use('/api', gameRoutes);
 
 
@@ -43,7 +42,7 @@ app.get('/', (req, res) => {
   res.send('백엔드 서버가 동작 중입니다!');
 });
 
-// 서버 실행
+
 app.listen(port, () => {
   console.log(`서버가 ${port}번 포트에서 실행 중입니다.`);
 });

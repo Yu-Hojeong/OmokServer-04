@@ -5,7 +5,7 @@ const User = require('../models/user');
 const router = express.Router();
 
 
-router.post('/auth/register', async (req, res) => {
+router.post('/register', async (req, res) => {
 
     try {
         const { username, password } = req.body;
@@ -20,7 +20,7 @@ router.post('/auth/register', async (req, res) => {
 });
 
 
-router.post('/auth/login', async (req, res) => {
+router.post('/login', async (req, res) => {
 
     try {
         const { username, password } = req.body;
@@ -38,7 +38,7 @@ router.post('/auth/login', async (req, res) => {
 });
 
 
-router.post('/auth/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
       return res.status(500).send({ message: '로그아웃 실패' });
