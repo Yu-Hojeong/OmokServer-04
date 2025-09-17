@@ -15,6 +15,7 @@ router.post('/register', async (req, res) => {
         await newUser.save();
         res.status(201).send({ message: '회원가입 성공!' });
     } catch (error) {
+        console.error('회원가입 중 에러 발생:', error); 
         res.status(500).send({ message: '회원가입 실패', error: error.message });
     }
 });
